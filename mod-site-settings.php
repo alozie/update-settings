@@ -97,12 +97,19 @@
 	// run test on settings file contents - based on test array
 	function test_settings($thisvars='NULL',$thistest='NULL') {
 		$result = false;
-		if(empty($thisvars) || empty($thistest)){
+		if(empty($thisvars) || !is_array($thistest) || empty($thistest)){
 				echo "Fail!  Variables or test not supplied. \n";
 				return false;
 		}
 		else{
-			
+			switch($thistest['type']){
+				case 'variable':
+					
+				case 'array_key':
+					
+				default:
+					return $result;
+			}
 			return $result;			
 		}
 	}
